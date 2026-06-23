@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyler Salvador Portfolio</title>
+</head>
+
+<body>
+
+```
+<!-- Welcome message updated by JavaScript -->
+<h1 id="welcomeMessage">Welcome!</h1>
+
+<!-- Navigation Menu -->
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        Hello! My name is Tyler Salvador. I am a student interested in
+        software development and mobile application design. I enjoy learning
+        new technologies and building projects that improve my programming
+        skills.
+    </p>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <!-- Project 1 -->
+    <a href="https://github.com/yourusername/project1" target="_blank">
+        <img src="https://via.placeholder.com/200"
+             alt="Project 1">
+    </a>
+
+    <!-- Project 2 -->
+    <a href="https://github.com/yourusername/project2" target="_blank">
+        <img src="https://via.placeholder.com/200"
+             alt="Project 2">
+    </a>
+
+    <!-- Project 3 -->
+    <a href="https://github.com/yourusername/project3" target="_blank">
+        <img src="https://via.placeholder.com/200"
+             alt="Project 3">
+    </a>
+
+    <p>Click an image to view the project.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name"><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email"><br><br>
+
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" rows="5" cols="30"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<script>
+    // Ask the visitor for their name
+    let userName = prompt("Please enter your name:");
+
+    // Update the welcome message with the user's name
+    if (userName) {
+        document.getElementById("welcomeMessage").textContent =
+            "Welcome, " + userName + "!";
+    }
+</script>
+```
+
+</body>
+</html>
 
