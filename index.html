@@ -4,7 +4,7 @@
 <head>
     <!--
         Author: Tyler Salvador
-        Date: 6/30/2026
+        Date: 07/09/2026
         Purpose: Personal portfolio with interactive JavaScript features.
     -->
 
@@ -38,8 +38,10 @@
         </ul>
     </nav>
 
+
     <!-- About -->
     <section id="about">
+
         <h2>About Me</h2>
 
         <p>
@@ -57,6 +59,7 @@
 
     </section>
 
+
     <!-- Featured Content -->
     <section id="featured">
 
@@ -72,6 +75,7 @@
 
         </div>
 
+
         <div id="personalProjects">
 
             <h3>Personal Projects</h3>
@@ -83,6 +87,7 @@
         </div>
 
     </section>
+
 
     <!-- Projects -->
     <section id="projects">
@@ -108,6 +113,7 @@
 
     </section>
 
+
     <!-- Contact -->
     <section id="contact">
 
@@ -116,24 +122,33 @@
         <form id="contactForm">
 
             <label for="name">Name:</label><br>
-            <input type="text" id="name"><br><br>
+            <input type="text" id="name" required><br><br>
+
 
             <label for="email">Email Address:</label><br>
-            <input type="email" id="email"><br><br>
+            <input type="email" id="email" required><br><br>
+
 
             <label for="subject">Subject:</label><br>
-            <input type="text" id="subject"><br><br>
+            <input type="text" id="subject" required><br><br>
+
 
             <label for="message">Message:</label><br>
-            <textarea id="message" rows="5" cols="30"></textarea><br><br>
+            <textarea id="message" rows="5" cols="30" required></textarea><br><br>
+
 
             <button type="submit" id="submitBtn">
                 Submit
             </button>
 
+
+            <!-- JavaScript displays loading and confirmation messages here -->
+            <p id="formMessage"></p>
+
         </form>
 
     </section>
+
 
 </body>
 
