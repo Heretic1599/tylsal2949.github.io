@@ -63,6 +63,7 @@ img {
     margin-top: 15px;
 }
 
+
 /* Dark Mode */
 
 .dark-mode {
@@ -84,13 +85,38 @@ img {
     color: #80cfff;
 }
 
-button {
+
+/* Buttons */
+
+button,
+input[type="submit"],
+input[type="button"] {
     padding: 10px 20px;
     cursor: pointer;
 }
+
+
+/* Form Inputs */
 
 input,
 textarea {
     width: 300px;
     padding: 8px;
+}
+
+
+/* JavaScript Confirmation Message */
+
+#confirmation {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+/* Order Total Display */
+
+#total {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
 }
