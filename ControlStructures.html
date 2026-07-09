@@ -3,18 +3,17 @@
 <head>
 <!--
 Author: Tyler Salvador
-Date: 06/23/2026
-Purpose: Calculate lunch order totals using control structures.
+Date: 07/9/2026
+Purpose: Calculate lunch order totals and demonstrate JavaScript DOM manipulation.
 -->
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>Unit 2 Guided Practice 1</title>
 
-<!-- CSS -->
 <link rel="stylesheet" href="styles.css">
 
-<!-- MODERNIZR -->
 <script src="modernizr.custom.05819.js"></script>
 
 </head>
@@ -22,15 +21,17 @@ Purpose: Calculate lunch order totals using control structures.
 <body>
 
 <header>
-<h1>
+<h1 id="pageTitle">
 TYLSAL2949, Control Structures
 </h1>
 </header>
 
 <article>
+
 <h2>Lunch selections</h2>
 
-<form>
+<form id="lunchForm">
+
 <input type="checkbox" id="item1" value="8" />
 <label for="item1">Fried chicken ($8.00)</label><br>
 
@@ -46,34 +47,92 @@ TYLSAL2949, Control Structures
 <input type="checkbox" id="item5" value="6" />
 <label for="item5">Side salad ($6.00)</label><br><br>
 
-<input type="button" value="Submit" id="sButton" />
+<input type="submit" value="Submit" id="sButton" />
+
 </form>
+
 
 <div>
 <p id="total"></p>
+<p id="confirmation"></p>
 </div>
+
 
 </article>
 
+
 <script>
-// Function to sum selected items and display total
+
+// Calculate selected lunch items
 function calcTotal() {
+
     var itemTotal = 0;
+
     var items = document.querySelectorAll("input[type='checkbox']");
 
     for (var i = 0; i < items.length; i++) {
+
         if (items[i].checked) {
+
             itemTotal += Number(items[i].value);
+
         }
+
     }
 
     document.getElementById("total").innerHTML =
         "Your order total is $" + itemTotal.toFixed(2);
+
 }
 
-// Add event listener to Submit button
-document.getElementById("sButton").addEventListener("click", calcTotal);
+
+// Dynamically create a new message using DOM methods
+var newSection = document.createElement("p");
+
+newSection.innerHTML =
+    "New Update: Online lunch ordering is now available!";
+
+document.querySelector("article").appendChild(newSection);
+
+
+// Modify existing elements using selectors
+var heading = document.querySelector("h2");
+
+heading.style.color = "#0066cc";
+
+
+var title = document.getElementById("pageTitle");
+
+title.style.fontSize = "32px";
+
+
+// Handle form submission with delayed confirmation
+document.getElementById("lunchForm").addEventListener("submit", function(event) {
+
+    // Prevent default form submission
+    event.preventDefault();
+
+
+    var confirmation = document.getElementById("confirmation");
+
+
+    // Display loading message
+    confirmation.innerHTML = "Sending message...";
+
+
+    // Replace loading message after 3 seconds
+    setTimeout(function() {
+
+        confirmation.innerHTML = "Message sent successfully!";
+
+        calcTotal();
+
+    }, 3000);
+
+});
+
 </script>
+
 
 </body>
 </html>
