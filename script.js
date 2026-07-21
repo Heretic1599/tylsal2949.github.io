@@ -102,3 +102,92 @@ submitButton.addEventListener("click", function (event) {
     alert("Thank you, " + name + ", your message has been sent!");
 
 });
+// Project Objects
+
+const project1 = {
+    title: "Gaming Backlog Tracker",
+    summary: "A web application designed to help users organize and track their video game collections.",
+    image: "https://via.placeholder.com/200",
+    repository: "https://github.com/Heretic1599"
+};
+
+
+const project2 = {
+    title: "Bill Splitter Application",
+    summary: "A JavaScript application that calculates tips, totals, and splits bills between users.",
+    image: "https://via.placeholder.com/200",
+    repository: "https://github.com/Heretic1599"
+};
+
+
+const project3 = {
+    title: "Portfolio Website",
+    summary: "A personal portfolio website created using HTML, CSS, and JavaScript.",
+    image: "https://via.placeholder.com/200",
+    repository: "https://github.com/Heretic1599"
+};
+
+
+// Array containing project objects
+
+const projectArray = [
+    project1,
+    project2,
+    project3
+];
+
+
+// Session Storage
+
+let storedProjects = sessionStorage.getItem("projects");
+
+
+if (storedProjects === null) {
+
+    sessionStorage.setItem(
+        "projects",
+        JSON.stringify(projectArray)
+    );
+
+    storedProjects = JSON.stringify(projectArray);
+
+}
+
+
+// Retrieve and parse data
+
+const projects = JSON.parse(storedProjects);
+
+
+
+// Dynamically display projects
+
+const projectSection = document.getElementById("projects");
+
+
+projects.forEach(function(project) {
+
+
+    const projectDiv = document.createElement("div");
+
+
+    projectDiv.innerHTML = `
+
+        <h3>${project.title}</h3>
+
+        <img src="${project.image}" 
+             alt="${project.title}">
+
+        <p>${project.summary}</p>
+
+        <a href="${project.repository}" target="_blank">
+            View Repository
+        </a>
+
+    `;
+
+
+    projectSection.appendChild(projectDiv);
+
+
+});
