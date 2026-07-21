@@ -63,7 +63,6 @@ img {
     margin-top: 15px;
 }
 
-
 /* Dark Mode */
 
 .dark-mode {
@@ -85,7 +84,6 @@ img {
     color: #80cfff;
 }
 
-
 /* Buttons */
 
 button,
@@ -95,7 +93,6 @@ input[type="button"] {
     cursor: pointer;
 }
 
-
 /* Form Inputs */
 
 input,
@@ -104,19 +101,32 @@ textarea {
     padding: 8px;
 }
 
+/* Welcome Modal */
 
-/* JavaScript Confirmation Message */
-
-#confirmation {
-    margin-top: 15px;
-    font-weight: bold;
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    z-index: 1000;
 }
 
+.modal-content {
+    background: white;
+    padding: 30px;
+    width: 320px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,.4);
+}
 
-/* Order Total Display */
+.modal-content button {
+    margin-top: 20px;
+}
 
-#total {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 15px;
+.dark-mode .modal-content {
+    background: #333;
+    color: white;
 }
