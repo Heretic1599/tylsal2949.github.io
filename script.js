@@ -116,7 +116,7 @@ const project2 = {
     title: "Bill Splitter Application",
     summary: "A JavaScript application that calculates tips, totals, and splits bills between users.",
     image: "https://via.placeholder.com/200",
-    repository: "https://github.com/Heretic1599"
+    repository: "https://heretic1599.github.io/BillSplitter/BillSplitter.html"
 };
 
 
