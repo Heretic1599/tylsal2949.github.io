@@ -1,62 +1,99 @@
 /*
     Author: Tyler Salvador
-    Date: 6/30/2026
+    Date: 07/21/2026
     Purpose: Add interactivity to the portfolio using JavaScript.
 */
 
-// Ask the visitor for their name
-let userName = prompt("Please enter your name:");
+// Welcome Message
 
-if (userName) {
-    document.getElementById("welcomeMessage").textContent =
-        "Welcome, " + userName + "!";
-}
+document.getElementById("welcomeMessage").textContent =
+    "Welcome to My Portfolio!";
 
-// -------------------------------
-// Skills Array and Loop
-// -------------------------------
-const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub"];
+// Welcome Modal
+
+const modal = document.getElementById("welcomeModal");
+const closeModal = document.getElementById("closeModal");
+
+closeModal.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+// Skills Array
+
+const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Git",
+    "GitHub"
+];
 
 const skillsList = document.getElementById("skillsList");
 
-skills.forEach(function(skill) {
+skills.forEach(function (skill) {
+
     const li = document.createElement("li");
+
     li.textContent = skill;
+
     skillsList.appendChild(li);
+
 });
 
-// -------------------------------
-// Featured Content Logic
-// -------------------------------
+// Featured Content
+
 const resources = document.getElementById("resources");
 const personalProjects = document.getElementById("personalProjects");
 
-// You currently have 3 projects
 const projectCount = 3;
 
 if (projectCount < 3) {
+
     resources.style.display = "block";
     personalProjects.style.display = "block";
+
 } else {
+
     resources.style.display = "none";
     personalProjects.style.display = "block";
+
 }
 
-// -------------------------------
-// Dark Mode Toggle
-// -------------------------------
+// Dark Mode with localStorage
+
 const darkMode = document.getElementById("darkMode");
 
+if (localStorage.getItem("darkMode") === "enabled") {
+
+    document.body.classList.add("dark-mode");
+
+    darkMode.checked = true;
+
+}
+
 darkMode.addEventListener("change", function () {
-    document.body.classList.toggle("dark-mode");
+
+    if (this.checked) {
+
+        document.body.classList.add("dark-mode");
+
+        localStorage.setItem("darkMode", "enabled");
+
+    } else {
+
+        document.body.classList.remove("dark-mode");
+
+        localStorage.setItem("darkMode", "disabled");
+
+    }
+
 });
 
-// -------------------------------
 // Contact Form
-// -------------------------------
+
 const submitButton = document.getElementById("submitBtn");
 
-submitButton.addEventListener("click", function(event) {
+submitButton.addEventListener("click", function (event) {
 
     event.preventDefault();
 
